@@ -22,7 +22,11 @@ public class Kermisje {
 			attractie.draaien(k.Attracties.get(userInput));
 		
 			k.Omzet(userInput);
+			attractie.attractieOmzet(userInput, k.AttractiePrijs.get(userInput));		
 		}
+		
+		
+		
 		else {
 			System.out.println("Tot ziens!");
 			System.exit(0);

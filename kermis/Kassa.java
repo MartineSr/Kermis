@@ -9,17 +9,17 @@ public class Kassa {
 	boolean doorgaan;
 	
 
-	ArrayList<Object> Attracties = new ArrayList<>();
-	ArrayList<Double> AttractiePrijs = new ArrayList<>();
+	public ArrayList<Object> Attracties = new ArrayList<>();
+	public ArrayList<Double> AttractiePrijs = new ArrayList<>();
 	
 	void Lijst() {
-	Attracties.add(new Spookhuis().naam = "Tomb of Horrors");
-	Attracties.add(new Botsauto().naam = "Botsauto");
-	Attracties.add(new Ladderklimmen().naam = "Ladders without Snakes");
-	Attracties.add(new Hawaii().naam = "Hawaii");
-	Attracties.add(new Spin().naam = "Spin");
-	Attracties.add(new Spiegelpaleis().naam = "Spiegelpaleis");
-	System.out.println("Op de kermis staan de volgende attracties: " +Attracties.toString());
+		Attracties.add(new Spookhuis().naam = "Tomb of Horrors");
+		Attracties.add(new Botsauto().naam = "Botsauto");
+		Attracties.add(new Ladderklimmen().naam = "Ladders without Snakes");
+		Attracties.add(new Hawaii().naam = "Hawaii");
+		Attracties.add(new Spin().naam = "Spin");
+		Attracties.add(new Spiegelpaleis().naam = "Spiegelpaleis");
+		System.out.println("Op de kermis staan de volgende attracties: " +Attracties.toString());
 	}
 	
 	void Prijslijst() {
