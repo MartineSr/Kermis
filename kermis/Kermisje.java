@@ -22,9 +22,11 @@ public class Kermisje {
 			attractie.draaien(k.Attracties.get(userInput));
 		
 			k.Omzet(userInput);
-			attractie.attractieOmzet(userInput, k.AttractiePrijs.get(userInput));		
-		}
-		
+			attractie.attractieOmzet(userInput, k.AttractiePrijs.get(userInput));	
+			
+			attractie.Kaartverkoop(userInput);
+			k.kaartVerkoop(userInput);
+		}		
 		
 		
 		else {

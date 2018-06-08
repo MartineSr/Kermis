@@ -1,16 +1,14 @@
 package kermis;
 
-import java.lang.reflect.Array;
-
 public class Attractie {
 	
 	public String naam;
 	public double prijs;
 	public int oppervlakte;	
 	public double omzetAttractie;
-	public int kaartje;
 	
 	double[] OmzetPerAttractie = new double[6];
+	int[] AantalKaartjes = new int[6];
 
 	// Method om iedere attractie te draaien.
 		
@@ -44,6 +42,28 @@ public class Attractie {
 		}			
 	}
 
+	public void Kaartverkoop(int a) {
+		switch(a) {
+		case 0: AantalKaartjes[0]++;
+				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[0]);
+			break;
+		case 1: AantalKaartjes[1]++;
+				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[1]);
+			break;
+		case 2: AantalKaartjes[2]++;
+				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[2]);
+			break;
+		case 3: AantalKaartjes[3]++;
+				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[3]);
+			break;
+		case 4: AantalKaartjes[4]++; 
+				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[4]);
+			break;
+		case 5: AantalKaartjes[5]++;
+				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[5]);
+			break;		
+		}	
+	}
 
 
 }

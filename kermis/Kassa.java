@@ -7,7 +7,7 @@ public class Kassa {
 	double omzet;
 	double prijs;
 	boolean doorgaan;
-	
+	int TotaalKaartjes;	
 
 	public ArrayList<Object> Attracties = new ArrayList<>();
 	public ArrayList<Double> AttractiePrijs = new ArrayList<>();
@@ -57,6 +57,14 @@ public class Kassa {
 		omzet += AttractiePrijs.get(userInput);
 		System.out.println("De omzet op de kermis is: "+omzet);
 	}
+	
+	public void kaartVerkoop(int userInput) {
+		TotaalKaartjes++;
+		System.out.println("Het totaal aantal verkochte kaarten op de kermis is: " +TotaalKaartjes);
+	}
+	
+	
+	
 	
 
 	
