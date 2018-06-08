@@ -15,6 +15,7 @@ public class Kermisje {
 		Scanner scan = new Scanner(System.in);
 		do {
 		k.vragen();		
+		
 		if(k.doorgaan == true) {
 			int userInput = scan.nextInt();
 				
@@ -26,6 +27,7 @@ public class Kermisje {
 			
 			attractie.Kaartverkoop(userInput);
 			k.kaartVerkoop(userInput);
+			
 		}		
 		
 		

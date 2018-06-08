@@ -6,6 +6,7 @@ public class Attractie {
 	public double prijs;
 	public int oppervlakte;	
 	public double omzetAttractie;
+	int draaiLimiet;
 	
 	double[] OmzetPerAttractie = new double[6];
 	int[] AantalKaartjes = new int[6];
@@ -52,18 +53,28 @@ public class Attractie {
 			break;
 		case 2: AantalKaartjes[2]++;
 				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[2]);
+				if(AantalKaartjes[2]%2 == 0) {
+					new Ladderklimmen().kansSpelBelastingBetalen(OmzetPerAttractie[2]);
+				}
 			break;
 		case 3: AantalKaartjes[3]++;
+				if(AantalKaartjes[3]%draaiLimiet == 0) {
+					new Hawaii().opstellingsKeuring();
+				}
 				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[3]);
 			break;
 		case 4: AantalKaartjes[4]++; 
 				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[4]);
+				if(AantalKaartjes[4]%draaiLimiet == 0) {
+					new Spin().opstellingsKeuring();
+				}
 			break;
 		case 5: AantalKaartjes[5]++;
 				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[5]);
 			break;		
 		}	
 	}
+	
 
 
 }
