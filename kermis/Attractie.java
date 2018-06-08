@@ -9,8 +9,9 @@ public class Attractie {
 
 	// Method om iedere attractie te draaien.
 		
-	public void draaien() {
-		System.out.println("Nu is "+this.naam +" aan het draaien.");	
+	public void draaien(Object a) {
+		this.naam = (String) a;
+		System.out.println("Nu is "+ this.naam +" aan het draaien.");	
 	}
 	
 
