@@ -2,6 +2,7 @@ package kermis;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Kassa {  	
@@ -11,6 +12,7 @@ public class Kassa {
 	int TotaalKaartjes;	
 
 	public ArrayList<Object> Attracties = new ArrayList<>();
+	public ArrayList<Object> AttractieObject = new ArrayList<>();
 	public ArrayList<Double> AttractiePrijs = new ArrayList<>();
 	
 	void Lijst() {
@@ -21,6 +23,15 @@ public class Kassa {
 		Attracties.add(new Spin().naam = "Spin");
 		Attracties.add(new Spiegelpaleis().naam = "Spiegelpaleis");
 		System.out.println("Op de kermis staan de volgende attracties: " +Attracties.toString());
+	}
+	
+	void ObjectLijstVoorBelastingMan() {
+		AttractieObject.add(new Spookhuis());
+		AttractieObject.add(new Botsauto());
+		AttractieObject.add(new Ladderklimmen());
+		AttractieObject.add(new Hawaii());
+		AttractieObject.add(new Spin());
+		AttractieObject.add(new Spiegelpaleis());
 	}
 	
 	void Prijslijst() {
@@ -63,23 +74,19 @@ public class Kassa {
 		System.out.println("Het totaal aantal verkochte kaarten op de kermis is: " +TotaalKaartjes);
 	}
 	
-	public void ontvangenBelastingInspecteur(Object inspecteur) {
+	public void ontvangenBelastingInspecteur(Object inspecteur, int dr) {
 		Random r = new Random();
 		int n = r.nextInt(14);
 		if(n == 0) {
 			System.out.println("BELASTING BETALEN!!!");
-			((BelastingInspecteur) inspecteur).innenBelasting(Ladderklimmen.gokBelasting);
-		}
+			int aantalBezoeken = 0;
+			aantalBezoeken++;
+			((BelastingInspecteur) inspecteur).gokAttractieCheck(AttractieObject, Attracties);
+			//((BelastingInspecteur) inspecteur).innenBelasting(Ladderklimmen.gokBelasting);
+			System.out.println("De inspecteur is nu "+ aantalBezoeken +" langs geweest op " + dr+ " keer draaien.");
+			float kans;
+			kans = ((float) aantalBezoeken)/dr;
+			System.out.println("De kans dat de belasting inspecteur langs komt is: "+kans);
+		}	
 	}
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
 }

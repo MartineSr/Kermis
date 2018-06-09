@@ -7,7 +7,7 @@ public class Attractie {
 	public int oppervlakte;	
 	public double omzetAttractie;
 	int draaiLimiet;
-	double ontvang;
+	int aantalDraaien;
 	
 	double[] OmzetPerAttractie = new double[6];
 	int[] AantalKaartjes = new int[6];
@@ -16,6 +16,7 @@ public class Attractie {
 		
 	public void draaien(Object a) {
 		this.naam = (String) a;
+		aantalDraaien++;
 		System.out.println("Nu is "+ this.naam +" aan het draaien.");	
 	}
 		

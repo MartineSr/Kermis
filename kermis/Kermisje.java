@@ -5,15 +5,18 @@ import java.util.Scanner;
 public class Kermisje {
 
 	public static void main(String[] args) {
-
+	
 		Attractie attractie = new Attractie();		
 		Kassa k = new Kassa();
 		BelastingInspecteur Klaas = new BelastingInspecteur();
 
 		k.Lijst();	
+		k.ObjectLijstVoorBelastingMan();
 		k.Prijslijst();
 		
 		Scanner scan = new Scanner(System.in);
+		
+		
 		do {
 		k.vragen();		
 		
@@ -28,7 +31,7 @@ public class Kermisje {
 			
 			attractie.Kaartverkoop(userInput);
 			k.kaartVerkoop(userInput);
-			k.ontvangenBelastingInspecteur(Klaas);			
+			k.ontvangenBelastingInspecteur(Klaas,attractie.aantalDraaien);			
 		}		
 		
 		
