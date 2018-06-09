@@ -7,9 +7,9 @@ public class BelastingInspecteur {
 	double belasting;
 	ArrayList<Object> confirmedGokAttracties = new ArrayList<>();
 	
-	public void innenBelasting(double gokbelasting) {
+	public void innenBelasting(double gokbelasting, Object object) {
 		belasting += gokbelasting;
-		System.out.println("Er is "+belasting+ " euro aan belasting betaald.");
+		System.out.println("Er is "+belasting+ " euro aan belasting betaald door: " +object);
 	}
 
 
@@ -21,5 +21,7 @@ public class BelastingInspecteur {
 		}
 		System.out.println("De gokattracties zijn: " +confirmedGokAttracties.toString());
 		System.out.println("De belasting inspecteur gaat belasting innen van de gokAttracties.");
-	}
+		}
+	
+	
 }

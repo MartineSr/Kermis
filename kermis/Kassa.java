@@ -74,7 +74,7 @@ public class Kassa {
 		System.out.println("Het totaal aantal verkochte kaarten op de kermis is: " +TotaalKaartjes);
 	}
 	
-	public void ontvangenBelastingInspecteur(Object inspecteur, int dr) {
+	public void ontvangenBelastingInspecteur(Object inspecteur, int dr, int[] aantalKaartjesVanAttractie, Attractie attractie, ArrayList<Object> Attracties) {
 		Random r = new Random();
 		int n = r.nextInt(14);
 		if(n == 0) {
@@ -82,11 +82,25 @@ public class Kassa {
 			int aantalBezoeken = 0;
 			aantalBezoeken++;
 			((BelastingInspecteur) inspecteur).gokAttractieCheck(AttractieObject, Attracties);
-			//((BelastingInspecteur) inspecteur).innenBelasting(Ladderklimmen.gokBelasting);
+			geldNaarBelastingMan(inspecteur, aantalKaartjesVanAttractie,attractie,Attracties);
+	
 			System.out.println("De inspecteur is nu "+ aantalBezoeken +" langs geweest op " + dr+ " keer draaien.");
 			float kans;
 			kans = ((float) aantalBezoeken)/dr;
 			System.out.println("De kans dat de belasting inspecteur langs komt is: "+kans);
 		}	
+	}
+
+	public void geldNaarBelastingMan(Object klaas, int[] aantalKaartjesVanAttractie, Attractie attractie, ArrayList<Object> Attracties) {
+		for(int i = 0; i < aantalKaartjesVanAttractie.length; i++) {
+			switch(i) {
+			case 2: if(!(aantalKaartjesVanAttractie[i] == 0)) {
+				((BelastingInspecteur) klaas).innenBelasting(attractie.gokbelasting[0], Attracties.get(i));
+				}
+			case 4: if(!(aantalKaartjesVanAttractie[i] == 0)) {
+				((BelastingInspecteur) klaas).innenBelasting(attractie.gokbelasting[1], Attracties.get(i));
+				}
+			}
+		}		
 	}
 }

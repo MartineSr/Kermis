@@ -1,6 +1,6 @@
 package kermis;
 
 public interface GokAttractie {
-	double kansSpelBelastingBetalen(double omzetLadderklimmen);
+	double kansSpelBelastingBetalen(double omzetGokAttractie);
 	
 }

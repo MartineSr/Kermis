@@ -1,16 +1,18 @@
 package kermis;
 
+import java.util.Arrays;
+
 public class Attractie {
 	
 	public String naam;
 	public double prijs;
 	public int oppervlakte;	
 	public double omzetAttractie;
-	int draaiLimiet;
 	int aantalDraaien;
+	double[] gokbelasting = new double[2];
 	
-	double[] OmzetPerAttractie = new double[6];
-	int[] AantalKaartjes = new int[6];
+	double[] OmzetPerAttractie = {0.0,0.0,0.0,0.0,0.0,0.0};
+	int[] AantalKaartjes = {0,0,0,0,0,0};
 
 	// Method om iedere attractie te draaien.
 		
@@ -25,58 +27,59 @@ public class Attractie {
 		
 		switch(a) {
 		case 0: OmzetPerAttractie[0] += b;
-				System.out.println("De omzet van " +this.naam+ " is: " + OmzetPerAttractie[0]);
 			break;
 		case 1: OmzetPerAttractie[1] += b;
-				System.out.println("De omzet van " +this.naam+ " is: " + OmzetPerAttractie[1]);
 			break;
 		case 2: OmzetPerAttractie[2] += b;
-				System.out.println("De omzet van " +this.naam+ " is: " + OmzetPerAttractie[2]);
 			break;
 		case 3: OmzetPerAttractie[3] += b;
-				System.out.println("De omzet van " +this.naam+ " is: " + OmzetPerAttractie[3]);
 			break;
 		case 4: OmzetPerAttractie[4] += b; 
-				System.out.println("De omzet van " +this.naam+ " is: " + OmzetPerAttractie[4]);
 			break;
 		case 5: OmzetPerAttractie[5] += b;
-				System.out.println("De omzet van " +this.naam+ " is: " + OmzetPerAttractie[5]);
 			break;		
-		}			
+		}		
+		
+		System.out.println("De totale omzet per attractie is: " +Arrays.toString(OmzetPerAttractie));
 	}
 
 	public void Kaartverkoop(int a) {
 		switch(a) {
 		case 0: AantalKaartjes[0]++;
-				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[0]);
 			break;
 		case 1: AantalKaartjes[1]++;
-				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[1]);
 			break;
 		case 2: AantalKaartjes[2]++;
-				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[2]);
+				
 				if(AantalKaartjes[2]%1 == 0) {
-				Ladderklimmen lk = new Ladderklimmen();
-				lk.kansSpelBelastingBetalen(OmzetPerAttractie[2]);
-				System.out.println(lk.gokBelasting);
+					Ladderklimmen lk = new Ladderklimmen();
+					lk.kansSpelBelastingBetalen(OmzetPerAttractie[2]);
+					gokbelasting[0] = lk.gokBelasting;
 				}
 			break;
 		case 3: AantalKaartjes[3]++;
-				if(AantalKaartjes[3]%draaiLimiet == 0) {
+				if(AantalKaartjes[3]%(new Hawaii().draaiLimiet) == 0) {
 					new Hawaii().opstellingsKeuring();
 				}
-				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[3]);
 			break;
 		case 4: AantalKaartjes[4]++; 
-				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[4]);
-				if(AantalKaartjes[4]%draaiLimiet == 0) {
+				
+				if(AantalKaartjes[4]%(new Spin().draaiLimiet) == 0) {
 					new Spin().opstellingsKeuring();
+				}
+				else {}
+				
+				if(AantalKaartjes[2]%1 == 0) {
+					Spin sp = new Spin();
+					sp.kansSpelBelastingBetalen(OmzetPerAttractie[4]);
+					gokbelasting[1] = sp.gokBelasting;
 				}
 			break;
 		case 5: AantalKaartjes[5]++;
-				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[5]);
 			break;		
-		}	
+		}
+		System.out.println("Het totaal aantal verkochte kaartjes per attractie is: " +Arrays.toString(AantalKaartjes));
+		
 		
 	}
 	
