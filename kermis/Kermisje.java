@@ -8,6 +8,7 @@ public class Kermisje {
 
 		Attractie attractie = new Attractie();		
 		Kassa k = new Kassa();
+		BelastingInspecteur Klaas = new BelastingInspecteur();
 
 		k.Lijst();	
 		k.Prijslijst();
@@ -27,7 +28,7 @@ public class Kermisje {
 			
 			attractie.Kaartverkoop(userInput);
 			k.kaartVerkoop(userInput);
-			
+			k.ontvangenBelastingInspecteur(Klaas);			
 		}		
 		
 		

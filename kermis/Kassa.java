@@ -2,6 +2,7 @@ package kermis;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Kassa {  	
 	double omzet;
@@ -53,7 +54,6 @@ public class Kassa {
 	
 	public void Omzet(int userInput) {
 		AttractiePrijs.get(userInput);
-		System.out.println("Deze attractie heeft " +AttractiePrijs.get(userInput) +" opgeleverd.");
 		omzet += AttractiePrijs.get(userInput);
 		System.out.println("De omzet op de kermis is: "+omzet);
 	}
@@ -63,7 +63,14 @@ public class Kassa {
 		System.out.println("Het totaal aantal verkochte kaarten op de kermis is: " +TotaalKaartjes);
 	}
 	
-	
+	public void ontvangenBelastingInspecteur(Object inspecteur) {
+		Random r = new Random();
+		int n = r.nextInt(14);
+		if(n == 0) {
+			System.out.println("BELASTING BETALEN!!!");
+			((BelastingInspecteur) inspecteur).innenBelasting(Ladderklimmen.gokBelasting);
+		}
+	}
 	
 	
 

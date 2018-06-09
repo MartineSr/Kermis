@@ -7,6 +7,7 @@ public class Attractie {
 	public int oppervlakte;	
 	public double omzetAttractie;
 	int draaiLimiet;
+	double ontvang;
 	
 	double[] OmzetPerAttractie = new double[6];
 	int[] AantalKaartjes = new int[6];
@@ -53,8 +54,10 @@ public class Attractie {
 			break;
 		case 2: AantalKaartjes[2]++;
 				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[2]);
-				if(AantalKaartjes[2]%2 == 0) {
-					new Ladderklimmen().kansSpelBelastingBetalen(OmzetPerAttractie[2]);
+				if(AantalKaartjes[2]%1 == 0) {
+				Ladderklimmen lk = new Ladderklimmen();
+				lk.kansSpelBelastingBetalen(OmzetPerAttractie[2]);
+				System.out.println(lk.gokBelasting);
 				}
 			break;
 		case 3: AantalKaartjes[3]++;
@@ -73,6 +76,7 @@ public class Attractie {
 				System.out.println("Het aantal verkochte kaartjes van " +this.naam+ " is: " + AantalKaartjes[5]);
 			break;		
 		}	
+		
 	}
 	
 
